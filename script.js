@@ -54,12 +54,12 @@ function playRound(playerSelection,computerSelection){
 
  function game(){
      let i;
-     for(i=0;i<5;i++){ // we make a loop to make a five round game
-         let playerSelection=prompt("Choose! Rock paper scissors!");// We are getting input from the player
+     while(playerScore<5 && computerScore<5){ // we make a loop to make a first to five game
+         let playerSelection=prompt("First to five! Quick choose! Rock paper scissors!");// We are getting input from the player
          playerSelection=playerSelection.toLowerCase();// We format the player's answer to match ours
          const computerSelection=computerPlay(); // we use the random computer answer we developed for the computer before
          playRound(playerSelection,computerSelection) // finally we play the round
      }
-     console.log("The end! the final score is Computer: "+computerScore+" Player: "+playerScore)
+     alert("The end! the final score is Computer: "+computerScore+" Player: "+playerScore)
  }
 console.log(game())
