@@ -74,4 +74,4 @@ function score(){
          score()
      }
  }
-
+console.log(game())
