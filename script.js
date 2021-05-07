@@ -60,9 +60,6 @@ function score(){
         computerScore++;
         return alert("The score is! Computer: "+computerScore+"Player: "+playerScore)
     }
-    else{
-        continue
-    }
 }
  function game(){
      let i;
