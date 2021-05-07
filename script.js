@@ -3,6 +3,9 @@ console.log("Hello world")
 const rock="rock";
 const paper="paper";
 const scissors="scissors";
+// we declare both the player's score and the computer score, so that we can keep track of it
+let playerScore=0;
+let computerScore=0;
 //made a list that includes the playing options.
 const rockpaperscissors= [rock,paper,scissors];
 
@@ -14,61 +17,49 @@ function computerPlay(){
 function playRound(playerSelection,computerSelection){
     if (playerSelection === rock && computerSelection===paper){
     alert("You lose! Computer chose paper and paper beats rock")
-    return false
+    computerScore++;
+    alert("The score is! Computer: "+computerScore+" Player: "+playerScore)
     }
     else if (playerSelection===rock && computerSelection===scissors){
     alert("You win! computer chose scissors and rock beats scissors!")
-    return true
+    playerScore++;
+    alert("The score is! Computer: "+computerScore+" Player: "+playerScore)
     }
     else if(playerSelection===paper && computerSelection===scissors){
     alert("You lose! Computer chose scissors and scissors beats paper!")
-    return false
+    computerScore++;
+    alert("The score is! Computer: "+computerScore+" Player: "+playerScore)
     }
     else if (playerSelection===paper && computerSelection===rock){
-    alert("You win! Computer chose rock and paper beats rock!")
-    return true
+    alert("You win! Computer chose rock and paper beats rock!") 
+    playerScore++;
+    alert("The score is! Computer: "+computerScore+" Player: "+playerScore)
     }
     else if (playerSelection===scissors && computerSelection===rock){
     alert("You lose! computer chose rock and rock beats scissors!")
-    return false
+    computerScore++;
+    alert("The score is! Computer: "+computerScore+" Player: "+playerScore)
+    
     }
     else if(playerSelection===scissors && computerSelection===paper){
     alert("You win! Computer chose paper and scissors beats paper!")
-    return true
+    playerScore++;
+    alert("The score is! Computer: "+computerScore+" Player: "+playerScore)
     }
     else{
-    return alert("It's a draw! both players chose the same!")
+    alert("It's a draw! both players chose the same!")
+    alert("The score is! Computer: "+computerScore+" Player: "+playerScore)
     }
 }
-// we get input from the player
-//let playerSelection=prompt("Choose! Rock paper scissors!")
-// we transform the input to match our variable
-//playerSelection=playerSelection.toLowerCase()
-//const computerSelection=computerPlay();
-//console.log(playRound(playerSelection,computerSelection))
 
-// we write a function to keep track of the score
-function score(){
-    let playerScore=0;
-    let computerScore=0;
-    if(playRound===true){ // if the player wins, he gets one point
-        playerScore++;
-        return alert("The score is! Computer: "+computerScore+"Player: "+playerScore)
-    
-    }
-    else if (playRound===false){  // if the computer wins, it gets one point
-        computerScore++;
-        return alert("The score is! Computer: "+computerScore+"Player: "+playerScore)
-    }
-}
  function game(){
      let i;
      for(i=0;i<5;i++){ // we make a loop to make a five round game
-         let playerSelection=prompt("Choose! Rock paper scissors!");
-         playerSelection=playerSelection.toLowerCase();
-         const computerSelection=computerPlay();
-         playRound(playerSelection,computerSelection)
-         score()
+         let playerSelection=prompt("Choose! Rock paper scissors!");// We are getting input from the player
+         playerSelection=playerSelection.toLowerCase();// We format the player's answer to match ours
+         const computerSelection=computerPlay(); // we use the random computer answer we developed for the computer before
+         playRound(playerSelection,computerSelection) // finally we play the round
      }
+     console.log("The end! the final score is Computer: "+computerScore+" Player: "+playerScore)
  }
 console.log(game())
