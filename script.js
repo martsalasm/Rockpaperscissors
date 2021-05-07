@@ -40,7 +40,38 @@ function playRound(playerSelection,computerSelection){
     return alert("It's a draw! both players chose the same!")
     }
 }
-var playerSelection=prompt()
-playerSelection=playerSelection.toLowerCase()
-const computerSelection=computerPlay();
-console.log(playRound(playerSelection,computerSelection))
+// we get input from the player
+//let playerSelection=prompt("Choose! Rock paper scissors!")
+// we transform the input to match our variable
+//playerSelection=playerSelection.toLowerCase()
+//const computerSelection=computerPlay();
+//console.log(playRound(playerSelection,computerSelection))
+
+// we write a function to keep track of the score
+function score(){
+    let playerScore=0;
+    let computerScore=0;
+    if(playRound===true){ // if the player wins, he gets one point
+        playerScore++;
+        return alert("The score is! Computer: "+computerScore+"Player: "+playerScore)
+    
+    }
+    else if (playRound===false){  // if the computer wins, it gets one point
+        computerScore++;
+        return alert("The score is! Computer: "+computerScore+"Player: "+playerScore)
+    }
+    else{
+        continue
+    }
+}
+ function game(){
+     let i;
+     for(i=0;i<5;i++){ // we make a loop to make a five round game
+         let playerSelection=prompt("Choose! Rock paper scissors!");
+         playerSelection=playerSelection.toLowerCase();
+         const computerSelection=computerPlay();
+         playRound(playerSelection,computerSelection)
+         score()
+     }
+ }
+
