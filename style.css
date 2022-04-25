@@ -26,8 +26,12 @@ h1{
     padding: 10px;
     gap: 20px;
 }
+.score{
+    border: black 3px solid;
+    padding: 10px;
+}
 .end{
     font-size:x-large;
     font-weight: bolder;
-    
+
 }

@@ -17,46 +17,48 @@ function computerPlay() {
 let result = document.querySelector(".result");
 let score = document.querySelector(".score");
 let end = document.querySelector(".end");
+let computerBox = score.querySelector(".computerBox")
+let playerBox =  score.querySelector(".playerBox")
 function playRound(playerSelection, computerSelection) {
     end.textContent="";
   if (playerSelection === rock && computerSelection === paper) {
     result.textContent = "You lose! Computer chose paper and paper beats rock";
     computerScore++;
-    score.textContent =
-      "The score is: Computer: " + computerScore + " Player: " + playerScore;
+    computerBox.textContent=computerScore
+    playerBox.textContent=playerScore
   } else if (playerSelection === rock && computerSelection === scissors) {
     result.textContent =
       "You win! computer chose scissors and rock beats scissors!";
     playerScore++;
-    score.textContent =
-      "The score is: Computer: " + computerScore + " Player: " + playerScore;
+    computerBox.textContent=computerScore
+    playerBox.textContent=playerScore
   } else if (playerSelection === paper && computerSelection === scissors) {
     result.textContent =
       "You lose! Computer chose scissors and scissors beats paper!";
     computerScore++;
-    score.textContent =
-      "The score is Computer: " + computerScore + " Player: " + playerScore;
+    computerBox.textContent=computerScore
+    playerBox.textContent=playerScore
   } else if (playerSelection === paper && computerSelection === rock) {
     result.textContent = "You win! Computer chose rock and paper beats rock!";
     playerScore++;
-    score.textContent =
-      "The score is: Computer: " + computerScore + " Player: " + playerScore;
+    computerBox.textContent=computerScore
+    playerBox.textContent=playerScore
   } else if (playerSelection === scissors && computerSelection === rock) {
     result.textContent =
       "You lose! computer chose rock and rock beats scissors!";
     computerScore++;
-    score.textContent =
-      "The score is: Computer: " + computerScore + " Player: " + playerScore;
+    computerBox.textContent=computerScore
+    playerBox.textContent=playerScore
   } else if (playerSelection === scissors && computerSelection === paper) {
     result.textContent =
       "You win! Computer chose paper and scissors beats paper!";
     playerScore++;
-    score.textContent =
-      "The score is: Computer: " + computerScore + " Player: " + playerScore;
+    computerBox.textContent=computerScore
+    playerBox.textContent=playerScore
   } else {
     result.textContent = "It's a draw! both players chose the same!";
-    score.textContent =
-      "The score is: Computer: " + computerScore + " Player: " + playerScore;
+    computerBox.textContent=computerScore
+    playerBox.textContent=playerScore
   }
   endGame();
 }
