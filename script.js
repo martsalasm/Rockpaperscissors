@@ -33,7 +33,7 @@ function playRound(playerSelection, computerSelection) {
       "You lose! Computer chose scissors and scissors beats paper!";
     computerScore++;
     score.textContent =
-      "The score is! Computer: " + computerScore + " Player: " + playerScore;
+      "The score is Computer: " + computerScore + " Player: " + playerScore;
   } else if (playerSelection === paper && computerSelection === rock) {
     result.textContent = "You win! Computer chose rock and paper beats rock!";
     playerScore++;
@@ -56,6 +56,7 @@ function playRound(playerSelection, computerSelection) {
     score.textContent =
       "The score is: Computer: " + computerScore + " Player: " + playerScore;
   }
+  endGame();
 }
 // ROCK BUTTON
 let rockBtn = document.querySelector("#rockBtn");
@@ -75,11 +76,25 @@ scissorsBtn.addEventListener("click", function () {
   playRound(scissors, computerPlay());
 });
 
-/*function game(){
+function endGame(){
+    if (computerScore==5){
+        result.textContent="I'm sorry you lost this time"
+        computerScore=0
+        playerScore=0
+    }
+    else if (playerScore==5){
+        result.textContent="Congratulations you won!"
+        computerScore=0
+        playerScore=0
+    }
+}
+
+/*
+    QUIERO UN BOTON QUE TRIGEREE GAME
+function game(){
      let i;
      while(playerScore<5 && computerScore<5){ // we make a loop to make a first to five game
          let playerSelection=prompt("First to five! Quick choose! Rock paper scissors!");// We are getting input from the player
-         playerSelection=playerSelection.toLowerCase();// We format the player's answer to match ours
          const computerSelection=computerPlay(); // we use the random computer answer we developed for the computer before
          playRound(playerSelection,computerSelection) // finally we play the round
      }
