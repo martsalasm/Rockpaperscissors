@@ -19,11 +19,15 @@ h1{
     align-items: center;
     justify-content: center;
 }
-.result,.score{
+.result,.score,.end{
     margin-top: 10px;
     display: flex;
     align-self: center;
-    flex-direction: column;
     padding: 10px;
     gap: 20px;
+}
+.end{
+    font-size:x-large;
+    font-weight: bolder;
+    
 }

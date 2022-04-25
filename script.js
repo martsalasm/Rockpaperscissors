@@ -16,7 +16,9 @@ function computerPlay() {
 }
 let result = document.querySelector(".result");
 let score = document.querySelector(".score");
+let end = document.querySelector(".end");
 function playRound(playerSelection, computerSelection) {
+    end.textContent="";
   if (playerSelection === rock && computerSelection === paper) {
     result.textContent = "You lose! Computer chose paper and paper beats rock";
     computerScore++;
@@ -78,12 +80,16 @@ scissorsBtn.addEventListener("click", function () {
 
 function endGame(){
     if (computerScore==5){
-        result.textContent="I'm sorry you lost this time"
+        result.textContent=""
+        end.textContent="I'm sorry but you lost this time, try playing again!"
+        end.setAttribute("style","color:red")
         computerScore=0
         playerScore=0
     }
     else if (playerScore==5){
-        result.textContent="Congratulations you won!"
+        result.textContent=""
+        end.textContent="Congratulations you won!"
+        end.setAttribute("style","color:green")
         computerScore=0
         playerScore=0
     }
